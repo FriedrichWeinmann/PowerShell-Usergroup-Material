@@ -144,6 +144,7 @@ function Expand-Object
                     if (($Object.GetType().FullName -eq "Microsoft.PowerShell.Commands.MemberDefinition") -and (-not $PSBoundParameters.ContainsKey("Name")))
                     {
                         $Object.Definition.Replace("), ", ")þ").Split("þ")
+			continue main
                     }
                     
                     # If we already have determined the property to use, return it
