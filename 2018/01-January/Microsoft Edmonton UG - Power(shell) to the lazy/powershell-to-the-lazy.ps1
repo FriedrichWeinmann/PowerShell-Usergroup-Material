@@ -3,6 +3,7 @@
  #------------------------------------------------------------------------------------------------# 
 
 $profile
+$profile | fl * -Force
 notepad $profile
 
 # Always loaded on starting a console
