@@ -67,6 +67,22 @@ New-Alias tem Invoke-Temp
 Register-PSFTeppScriptblock -Name vihost -ScriptBlock { 'vihost1','vihost2','vitest' }
 Register-PSFTeppArgumentCompleter -Command Connect-VIServer -Parameter Server -Name vihost
 
+# Let's see it in action:
+function Get-Alcohol
+{
+    [CmdletBinding()]
+    Param (
+        [string]
+        $Type
+    )
+
+    if ($Type -eq "Mead") { Write-Host "Drinking a horn of $Type" }
+    else { Write-Host "Drinking a glass of $Type" }
+}
+
+Register-PSFTeppScriptblock -Name "alcohol" -ScriptBlock { 'Beer','Mead','Whiskey','Wine','Vodka','Rum (3y)', 'Rum (5y)', 'Rum (7y)' }
+Register-PSFTeppArgumentCompleter -Command Get-Alcohol -Parameter Type -Name alcohol
+
  #------------------------------------------------------------------------------------------------# 
  #                                        6) Default Value                                        # 
  #------------------------------------------------------------------------------------------------# 
