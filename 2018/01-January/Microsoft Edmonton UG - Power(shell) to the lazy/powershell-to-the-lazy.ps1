@@ -8,6 +8,14 @@ notepad $profile
 # Always loaded on starting a console
 # Perfect lcoation to place you personal customizations
 
+# Central profile from networkshare:
+# The following line as batch file:
+powershell.exe -NoExit -File \\server\share\user\%USERNAME%_profile.ps1
+
+# No SMB available? Running under admin account?
+# Load from webserver using the PowerShell Toolkit!
+# http://allthingspowershell.blogspot.de/2017/01/the-powershell-toolkit-concepts-benefits.html
+
  #------------------------------------------------------------------------------------------------# 
  #                               2) Understanding your own behavior                               # 
  #------------------------------------------------------------------------------------------------# 
@@ -46,7 +54,52 @@ New-Alias tem Invoke-Temp
 # <Verb>-<Noun> is the recommended function style, making it easier to discover
 
  #------------------------------------------------------------------------------------------------# 
- #                                  5) Stealing is best practice                                  # 
+ #                                       5) Tab Completion                                        # 
+ #------------------------------------------------------------------------------------------------# 
+
+# Scenario:
+# When using Connect-VIServer, you usually connect to to either vihost1, vihost2 or vihosttest
+# Wouldn't it be nice to simply be able to tab through what you want?
+
+# Note:
+# This example needs the PSFramework module
+
+Register-PSFTeppScriptblock -Name vihost -ScriptBlock { 'vihost1','vihost2','vitest' }
+Register-PSFTeppArgumentCompleter -Command Connect-VIServer -Parameter Server -Name vihost
+
+ #------------------------------------------------------------------------------------------------# 
+ #                                        6) Default Value                                        # 
+ #------------------------------------------------------------------------------------------------# 
+
+# Usually connect to the same computer?
+# Why not set it as the default value?
+$PSDefaultParameterValues.Add("Connect-VIServer:Server", 'vihost1')
+
+# Connection Credentials?
+# Run this once (you may need to create the folder first):
+Get-Credential | Export-Clixml "$env:APPDATA\WindowsPowerShell\cred.xml"
+
+# Put this in profile:
+$cred = Import-Clixml -Path "$env:APPDATA\WindowsPowerShell\cred.xml"
+$PSDefaultParameterValues.Add("Connect-VIServer:User", $cred.UserName)
+$PSDefaultParameterValues.Add("Connect-VIServer:Password", $cred.GetNetworkCredential().Password)
+
+# Default values in practice
+function Get-Test
+{
+    [CmdletBinding()]
+    Param (
+        $Foo,
+        $Bar
+    )
+    Write-Host "$Foo is $Bar"
+}
+$PSDefaultParameterValues.Add("Get-Test:Foo", "DefaultValue")
+Get-Test -Bar "Something"
+Get-Test -Bar "Foo" -Foo "Bar"
+
+ #------------------------------------------------------------------------------------------------# 
+ #                                  7) Stealing is best practice                                  # 
  #------------------------------------------------------------------------------------------------# 
 
 <#
@@ -68,43 +121,12 @@ Typical solutions:
 #>
 
  #------------------------------------------------------------------------------------------------# 
- #                                         6) Toolmaking                                          # 
+ #                                         8) Toolmaking                                          # 
  #------------------------------------------------------------------------------------------------# 
 
 # Show example scripts 1-5
 # From a simple batch-style script to a reusable function
 # Next step after examples: Package it into a module and publish it.
-
- #------------------------------------------------------------------------------------------------# 
- #                                       7) Tab Completion                                        # 
- #------------------------------------------------------------------------------------------------# 
-
-# Scenario:
-# When using Connect-VIServer, you usually connect to to either vihost1, vihost2 or vihosttest
-# Wouldn't it be nice to simply be able to tab through what you want?
-
-# Note:
-# This example needs the PSFramework module
-
-Register-PSFTeppScriptblock -Name vihost -ScriptBlock { 'vihost1','vihost2','vitest' }
-Register-PSFTeppArgumentCompleter -Command Connect-VIServer -Parameter Server -Name vihost
-
- #------------------------------------------------------------------------------------------------# 
- #                                        8) Default Value                                        # 
- #------------------------------------------------------------------------------------------------# 
-
-# Usually connect to the same computer?
-# Why not set it as the default value?
-$PSDefaultParameterValues.Add("Connect-VIServer:Server", 'vihost1')
-
-# Connection Credentials?
-# Run this once (you may need to create the folder first):
-Get-Credential | Export-Clixml "$env:APPDATA\WindowsPowerShell\cred.xml"
-
-# Put this in profile:
-$cred = Import-Clixml -Path "$env:APPDATA\WindowsPowerShell\cred.xml"
-$PSDefaultParameterValues.Add("Connect-VIServer:User", $cred.UserName)
-$PSDefaultParameterValues.Add("Connect-VIServer:Password", $cred.GetNetworkCredential().Password)
 
  #------------------------------------------------------------------------------------------------# 
  #                                      9) Create Templates!                                      # 
