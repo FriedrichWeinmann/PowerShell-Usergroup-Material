@@ -188,3 +188,19 @@ If you keep creating the same kind of document - powershell or not - design a si
 A complex way for PowerShell projects is available in a module named Plaster
 Currently working on a simple way for the module PSModuleDevelopment
 #>
+
+ #------------------------------------------------------------------------------------------------# 
+ #                                             Notes                                              # 
+ #------------------------------------------------------------------------------------------------# 
+
+<#
+Presentation code:
+https://github.com/FriedrichWeinmann/PowerShell-Usergroup-Material/tree/master/2018/01-January/Microsoft%20Edmonton%20UG%20-%20Power(shell)%20to%20the%20lazy
+
+About the speaker:
+Github: https://github.com/FriedrichWeinmann
+Twitter: @FredWeinmann
+Blog: https://allthingspowershell.blogspot.de
+Website: http://psframework.org
+slack: https://psframework.slack.com
+#>
