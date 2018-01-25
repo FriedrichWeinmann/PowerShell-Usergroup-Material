@@ -21,7 +21,31 @@ powershell.exe -NoExit -File \\server\share\user\%USERNAME%_profile.ps1
  #                               2) Understanding your own behavior                               # 
  #------------------------------------------------------------------------------------------------# 
 
-# <insert from other presentation>
+## a) Cold, hard numbers
+# There's a spy on board
+notepad (Get-PSReadlineOption).HistorySavePath
+
+# Let's use him to our own ends
+# This is mostly black data, but trust me, it works
+$Tokens = @()
+$ast = [System.Management.Automation.Language.Parser]::ParseFile("$env:APPDATA\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt", [ref]$Tokens, [ref]$null)
+$Tokens | Where-Object TokenFlags -eq CommandName | Group-Object Text | Sort-Object Count
+
+## b) Impression
+<#
+- Is anything particularly tiresome?
+- Anything you keep typing again and again?
+#>
+
+# Example issue: Select-Object -ExpandProperty
+# It's a bother to type
+dir | Select-Object -ExpandProperty FullName
+
+# So I create a function to do it for me and gave it an alias that is really short
+dir | exp FullName
+
+# This was still too long ... so I added default properties
+dir | exp
 
  #------------------------------------------------------------------------------------------------# 
  #                                      3) Creating Aliases                                       # 
@@ -34,9 +58,9 @@ New-Alias foo Get-Bar
 # Greatest enemy:
 # "But I'll only have them on my machine? What if I'm somewhere else?"
 # a) Roaming Profiles
-# b) Networked Profiles (see later)
+# b) Networked Profiles (see above)
 # c) Get-Command is your friend
-# Using global defaults is no excuse for inefficiency!
+# Prefering global defaults due to unifomity is no excuse for inefficiency!
 
  #------------------------------------------------------------------------------------------------# 
  #                                        4) Simple Tools                                         # 
@@ -45,14 +69,17 @@ function tem
 {
     Set-Location -Path C:\Temp
 }
+tem
 
 # b) Better tooling
+Remove-Item function:\tem
 function Invoke-Temp
 {
     Set-Location -Path C:\Temp
 }
 New-Alias tem Invoke-Temp
 # <Verb>-<Noun> is the recommended function style, making it easier to discover
+tem
 
  #------------------------------------------------------------------------------------------------# 
  #                                       5) Tab Completion                                        # 
@@ -64,6 +91,10 @@ New-Alias tem Invoke-Temp
 
 # Note:
 # This example needs the PSFramework module
+# To Install:
+#   Install-Module PSFramework
+# For more information:
+# http://psframework.org
 
 Register-PSFTeppScriptblock -Name vihost -ScriptBlock { 'vihost1','vihost2','vitest' }
 Register-PSFTeppArgumentCompleter -Command Connect-VIServer -Parameter Server -Name vihost
@@ -133,8 +164,8 @@ Typical solutions:
 - dbatools (MSSQL Database Administration)
 - Pester & ScriptAnalyzer (Tests and QA)
 - PSModuleDevelopment (Development tools)
-- PSBuild (Build automation)
-- psake (Deploy automation)
+- PSDeploy (Deploy automation)
+- psake (Build automation)
 #>
 
  #------------------------------------------------------------------------------------------------# 
