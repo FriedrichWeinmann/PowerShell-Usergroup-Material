@@ -69,6 +69,7 @@ function tem
 {
     Set-Location -Path C:\Temp
 }
+mkdir C:\temp
 tem
 
 # b) Better tooling
@@ -204,3 +205,6 @@ Blog: https://allthingspowershell.blogspot.de
 Website: http://psframework.org
 slack: https://psframework.slack.com
 #>
+
+# Afterwords:
+# Module for Keybindings: PSReadline
