@@ -1,0 +1,11 @@
+TOPIC
+	about_BeerFactory
+	
+SHORT DESCRIPTION
+	Explains how to use the BeerFactory powershell module
+	
+LONG DESCRIPTION
+	<Insert Content here>
+
+KEYWORDS
+	BeerFactory

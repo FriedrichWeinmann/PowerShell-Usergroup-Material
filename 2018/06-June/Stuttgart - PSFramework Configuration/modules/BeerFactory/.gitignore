@@ -1,0 +1,16 @@
+
+# ignore the settings folder and files for VSCode and PSS
+.vscode/*
+*.psproj
+*TempPoint*
+
+# Ignore staging info from Visual Studio
+library/BeerFactory/.vs/*
+library/BeerFactory/BeerFactory/bin/*
+library/BeerFactory/BeerFactory/obj/*
+
+# ignore PowerShell Studio MetaData
+BeerFactory/BeerFactory.psproj
+BeerFactory/BeerFactory.psproj.bak
+BeerFactory/BeerFactory.psprojs
+BeerFactory/BeerFactory.psproj

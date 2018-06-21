@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BeerFactory</name>
+    </assembly>
+    <members>
+        <member name="T:BeerFactory.Beer">
+            <summary>
+            Class containing information on a beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.Beer.Brand">
+            <summary>
+            Name of the brand
+            </summary>
+        </member>
+        <member name="F:BeerFactory.Beer.Type">
+            <summary>
+            The kind of beer this is.
+            </summary>
+        </member>
+        <member name="F:BeerFactory.Beer.Size">
+            <summary>
+            The size of the beer.
+            </summary>
+        </member>
+        <member name="M:BeerFactory.Beer.#ctor">
+            <summary>
+            Creates a blank beer object
+            </summary>
+        </member>
+        <member name="M:BeerFactory.Beer.#ctor(System.String,BeerFactory.BeerType,BeerFactory.Container)">
+            <summary>
+            Creates a filled in beer object
+            </summary>
+            <param name="Brand">The brand of the beer</param>
+            <param name="Type">The kind of beer</param>
+            <param name="Size">The size of the beer</param>
+        </member>
+        <member name="T:BeerFactory.BeerGettingWarmException">
+            <summary>
+            Truly terrible!
+            </summary>
+        </member>
+        <member name="M:BeerFactory.BeerGettingWarmException.#ctor(System.String)">
+            <summary>
+            Creates an out of beer Exception
+            </summary>
+            <param name="Message"></param>
+        </member>
+        <member name="M:BeerFactory.BeerGettingWarmException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates an out of beer Exception
+            </summary>
+            <param name="Message"></param>
+            <param name="InnerException"></param>
+        </member>
+        <member name="T:BeerFactory.BeerType">
+            <summary>
+            The kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Ale">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Altbier">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Berliner_Weiße">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Dinkelbier">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Emmerbier">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Exportbier">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Gose">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Haferbier">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Helles">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Kölsch_und_Wieß">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Lagerbier">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Märzen">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Münchner_Dunkel">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Pils">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Porter">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Roggenbier">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Rotbier">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Schwarzbier">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Stout">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Weizenbier">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.BeerType.Zoigl">
+            <summary>
+            A kind of beer
+            </summary>
+        </member>
+        <member name="T:BeerFactory.Container">
+            <summary>
+            The container to store beer in
+            </summary>
+        </member>
+        <member name="F:BeerFactory.Container.Glas">
+            <summary>
+            For the ladies among us
+            </summary>
+        </member>
+        <member name="F:BeerFactory.Container.Mug">
+            <summary>
+            For tourists
+            </summary>
+        </member>
+        <member name="F:BeerFactory.Container.Maßkrug">
+            <summary>
+            For daily use
+            </summary>
+        </member>
+        <member name="F:BeerFactory.Container.Barrel">
+            <summary>
+            Beer Multiplayer
+            </summary>
+        </member>
+        <member name="F:BeerFactory.Container.Horn">
+            <summary>
+            Going primal!
+            </summary>
+        </member>
+        <member name="T:BeerFactory.OutOfBeerException">
+            <summary>
+            The greatest disaster has occured!
+            </summary>
+        </member>
+        <member name="M:BeerFactory.OutOfBeerException.#ctor(System.String)">
+            <summary>
+            Creates an out of beer Exception
+            </summary>
+            <param name="Message"></param>
+        </member>
+        <member name="M:BeerFactory.OutOfBeerException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates an out of beer Exception
+            </summary>
+            <param name="Message"></param>
+            <param name="InnerException"></param>
+        </member>
+    </members>
+</doc>
