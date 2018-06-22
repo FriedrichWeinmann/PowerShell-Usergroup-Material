@@ -4,7 +4,7 @@ Get-PSFConfig beerfactory.fridge.size | Out-String | Out-Host
 
 Write-Host " "
 Write-PSFHostColor -String "2) Importing Module: <c='sub'>BeerFactory</c>"
-Import-Module "D:\Code\Github\PowerShell-Usergroup-Material\2018\06-June\Stuttgart - PSFramework Configuration\modules\BeerFactory\BeerFactory\BeerFactory.psd1"
+Import-Module "F:\Code\Github\PowerShell-Usergroup-Material\2018\06-June\St-Louis - PSFramework Configuration\modules\BeerFactory\BeerFactory\BeerFactory.psd1"
 
 Write-Host " "
 Write-PSFHostColor -String "3) Configuration Setting <c='em'>after</c> module import"

@@ -1,4 +1,4 @@
-Import-PSFConfig -Path D:\temp\demo\config-test.json
+Import-PSFConfig -Path F:\temp\demo\config-test.json
 
 Write-PSFHostColor @"
   Project Repository: <c='em'>$(Get-PSFConfigValue -FullName MyProject.Build.Repository)</c>
