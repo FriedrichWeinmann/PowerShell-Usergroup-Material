@@ -1,0 +1,21 @@
+﻿<ProjectState>
+  <Version>1.0</Version>
+  <FileID>3b89ca87-d503-4cdd-b395-e886b4c66178</FileID>
+  <OpenFolders>
+    <Folder>bin</Folder>
+    <Folder>en-us</Folder>
+    <Folder>functions</Folder>
+    <Folder>internal</Folder>
+    <Folder>internal\configurations</Folder>
+    <Folder>internal\scripts</Folder>
+  </OpenFolders>
+  <OpenFiles>
+    <File>functions\Get-Beer.ps1</File>
+    <File>functions\New-Beer.ps1</File>
+    <File>functions\Remove-Beer.ps1</File>
+    <File>functions\Set-Beer.ps1</File>
+    <File>internal\scripts\preimport.ps1</File>
+    <File>BeerFactory.psd1</File>
+    <File>internal\configurations\configuration.ps1</File>
+  </OpenFiles>
+</ProjectState>
