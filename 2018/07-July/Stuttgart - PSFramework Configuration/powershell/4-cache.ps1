@@ -14,9 +14,9 @@ Import-PSFConfig -ModuleName MyModule
 
 Write-PSFMessage -Level Host -Message "Old Example3 Values <c='em'>$((Get-PSFConfigValue -FullName 'MyModule.Example3') -join ',')</c>"
 
-[array]$value = Get-PSFConfigValue -FullName 'MyModule.Example3'
-$value += ($value.Count + 1)
-Set-PSFConfig -Module MyModule -Name Example3 -Value $value
+[array]$settingValue = Get-PSFConfigValue -FullName 'MyModule.Example3'
+$settingValue += ($settingValue.Count + 1)
+Set-PSFConfig -Module MyModule -Name Example3 -Value $settingValue
 Write-PSFMessage -Level Host -Message "New Example3 Values <c='em'>$((Get-PSFConfigValue -FullName 'MyModule.Example3') -join ',')</c>"
 
 Write-PSFMessage -Level Host -Message "Persisting Module Cache"

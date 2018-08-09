@@ -63,7 +63,7 @@ code "$moduleRoot\internal\configurations\configuration.ps1"
 code "$moduleRoot\functions\New-Beer.ps1"
 
 # Set bad value (not an integer)
-Set-PSFConfig beerfactory.fridge.size "foo"
+Set-PSFConfig -FullName beerfactory.fridge.size -Value "foo"
 
 # Update the setting and persist it
 Set-PSFConfig beerfactory.fridge.size 12 -PassThru | Register-PSFConfig
@@ -98,11 +98,11 @@ Start-Process powershell.exe -ArgumentList @('-File', ".\3-CI-CD-Script.ps1") -W
  #                         5) Persisting Module Cache                         # 
  #----------------------------------------------------------------------------# 
 
-# Create regular settings
+# Create common settings (as seen in 3. Module Options )
 Set-PSFConfig -Module MyModule -Name Example1 -Value 42 -Validation integer -Initialize -Description "Some arbitrary example setting that will not be part of the cache"
 Set-PSFConfig -Module MyModule -Name Example2 -Value $true -Validation bool -Initialize -Description "Some arbitrary example setting that will not be part of the cache"
 
-# Create settings designed for persisting module cache (user should not mess with those)
+# Create settings designed for persisting module cache (user should not directly mess with those)
 Set-PSFConfig -Module MyModule -Name Example3 -Value @() -ModuleExport -Hidden -Initialize -Description "Some arbitrary example setting that WILL be part of the cache"
 Set-PSFConfig -Module MyModule -Name Example4 -Value @() -ModuleExport -Hidden -Initialize -Description "Some arbitrary example setting that WILL be part of the cache"
 Set-PSFConfig -Module MyModule -Name Example5 -Value @() -ModuleExport -Hidden -Initialize -Description "Some arbitrary example setting that WILL be part of the cache"
