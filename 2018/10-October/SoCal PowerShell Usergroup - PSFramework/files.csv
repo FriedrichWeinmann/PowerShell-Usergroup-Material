@@ -1,0 +1,58 @@
+#TYPE System.IO.FileInfo
+"PSPath","PSParentPath","PSChildName","PSDrive","PSProvider","PSIsContainer","Mode","VersionInfo","BaseName","Target","LinkType","Name","Length","DirectoryName","Directory","IsReadOnly","Exists","FullName","Extension","CreationTime","CreationTimeUtc","LastAccessTime","LastAccessTimeUtc","LastWriteTime","LastWriteTimeUtc","Attributes"
+"Microsoft.PowerShell.Core\FileSystem::F:\Temp\demo\bigandnasty.clixml","Microsoft.PowerShell.Core\FileSystem::F:\Temp\demo","bigandnasty.clixml","demo","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             F:\Temp\demo\bigandnasty.clixml
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","bigandnasty","System.Collections.Generic.List`1[System.String]",,"bigandnasty.clixml","839710","F:\Temp\demo","F:\Temp\demo","False","True","F:\Temp\demo\bigandnasty.clixml",".clixml","02.10.2018 13:13:41","02.10.2018 11:13:41","02.10.2018 13:13:41","02.10.2018 11:13:41","02.10.2018 13:14:55","02.10.2018 11:14:55","Archive"
+"Microsoft.PowerShell.Core\FileSystem::F:\Temp\demo\config.json","Microsoft.PowerShell.Core\FileSystem::F:\Temp\demo","config.json","demo","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             F:\Temp\demo\config.json
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","config","System.Collections.Generic.List`1[System.String]",,"config.json","692","F:\Temp\demo","F:\Temp\demo","False","True","F:\Temp\demo\config.json",".json","02.10.2018 10:19:03","02.10.2018 08:19:03","02.10.2018 10:19:03","02.10.2018 08:19:03","02.10.2018 10:19:03","02.10.2018 08:19:03","Archive"
+"Microsoft.PowerShell.Core\FileSystem::F:\Temp\demo\slimandnice.clidat","Microsoft.PowerShell.Core\FileSystem::F:\Temp\demo","slimandnice.clidat","demo","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             F:\Temp\demo\slimandnice.clidat
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","slimandnice","System.Collections.Generic.List`1[System.String]",,"slimandnice.clidat","11906","F:\Temp\demo","F:\Temp\demo","False","True","F:\Temp\demo\slimandnice.clidat",".clidat","02.10.2018 13:15:15","02.10.2018 11:15:15","02.10.2018 13:15:15","02.10.2018 11:15:15","02.10.2018 13:15:15","02.10.2018 11:15:15","Archive"
+"Microsoft.PowerShell.Core\FileSystem::F:\Temp\demo\water.txt","Microsoft.PowerShell.Core\FileSystem::F:\Temp\demo","water.txt","demo","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             F:\Temp\demo\water.txt
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","water","System.Collections.Generic.List`1[System.String]",,"water.txt","12","F:\Temp\demo","F:\Temp\demo","False","True","F:\Temp\demo\water.txt",".txt","02.10.2018 11:01:09","02.10.2018 09:01:09","02.10.2018 11:01:09","02.10.2018 09:01:09","02.10.2018 11:01:09","02.10.2018 09:01:09","Archive"
